@@ -1,0 +1,18 @@
+---
+# tasks file for webserver
+- include_vars: "vars/main.yml"
+     
+- apt:
+    name: "{{ apache2_var }}"
+    state: present
+
+- service:
+    name: "{{ apache2_var }}"
+    state: restarted
+  register: output
+- debug:
+    msg:  "{{output}}"
+- copy:
+    src: "files/index.html"
+    dest: "/var/www/html/"
+ 
