@@ -1,4 +1,4 @@
-Role Name
+webserver
 =========
 
 This role will install apache2 server on any ubuntu machine
